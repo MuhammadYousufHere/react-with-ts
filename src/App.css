@@ -1,0 +1,35 @@
+@font-face {
+	font-family: LibreBold;
+	src: url('./assets/fonts/LibreBaskerville-Bold.otf');
+}
+@font-face {
+	font-family: LibreReg;
+	src: url('./assets/fonts/LibreBaskerville-Regular.otf');
+}
+body {
+	font-family: LibreReg;
+}
+
+.header {
+	background-color: #7f53ac;
+	background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+	padding: 1em;
+}
+.btn {
+	background: cornflowerblue;
+	padding: 0.5rem;
+}
+.header > nav {
+	display: flex;
+}
+
+.navLink {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	padding-right: 1em;
+}
+
+:global .page {
+	text-align: center;
+}

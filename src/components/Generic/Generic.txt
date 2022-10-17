@@ -1,0 +1,7 @@
+# Generic aka Reusable types
+
+@ Generic Functions
+@ Generic Classes
+@ Generic Interfaces
+@ Generic Constraints
+@ Type Maping //Powerful technique for transforming types

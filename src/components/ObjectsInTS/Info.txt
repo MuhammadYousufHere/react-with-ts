@@ -1,0 +1,28 @@
+  Object Oriented Programming
+   One of programming pradiam / style
+@ Procedural
+@ Object Oriented
+@ Functional
+@ Event - Driven
+@ Aspect Oriented
+
+=> In OOP  Objects are Building Block of our application
+=> Objects are units that contains Data called state / properties and Operations called behavior / Method.
+=> Each Object should be resposible for singal task.
+
+
+CLASS
+A blue print / factory for creating Objects.
+
+Access Control Modifier
+=> Controls the modification of objects properties
+  In TS, there are three types of Modifier
+
+ * public
+ * private
+ * protected
+
+all properties are public by default
+so you dont need to specify
+
+public properties can only be redefinied/ modified within the class.
