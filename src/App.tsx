@@ -8,6 +8,7 @@ import Navbar from './components/Navigation/Navbar';
 import { oc } from './AdvanceTS/OptionalChaining';
 import { RangeGen } from './AdvanceTS/AdvanceTypes/Unknown';
 import Footer from './components/Footer/Footer';
+import TodoApp from './pages/Todo/TodoApp';
 function App() {
 	const { serializeJSON } = oc;
 	const person = {
@@ -70,6 +71,7 @@ function Home() {
 			</figure>
 		</main>
 		<Footer/>
+		<TodoApp/>
 		</>
 	);
 }
