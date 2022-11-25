@@ -28,6 +28,10 @@ function AppRoutes() {
         path='/cart'
         element={<Cart />}
       />
+      <Route
+        path='/hooks'
+        element={<Playground />}
+      />
     </Routes>
   );
 }
@@ -37,7 +41,7 @@ function App() {
   return (
     <div style={{ background: bg }}>
       <Navbar />
-      <Playground />
+      <AppRoutes />
     </div>
   );
 }
