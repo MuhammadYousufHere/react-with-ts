@@ -6,14 +6,18 @@ type Props = {
 }
 
 const AddTodo:React.FC<Props> = ({addTodo}) => {
+
   const todoTextRef = useRef<HTMLInputElement>(null)
+  
   const handleSubmit = (e:React.FormEvent)=>{
     e.preventDefault();
+
    if(!todoTextRef.current?.value) return;
    addTodo(todoTextRef.current!.value)
    todoTextRef.current.value = ''
     
   }
+
   return (
     <form onSubmit={handleSubmit}>
      <div className="form-control">
