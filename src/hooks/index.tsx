@@ -1,7 +1,7 @@
 import React from 'react';
-import localforage from 'localforage';
 import { Person } from '../types';
 import { Loading } from './Loading';
+import { usePerson } from './customHooks/usePerson';
 
 export const initialPerson: Person = {
   id: 4,
@@ -14,23 +14,8 @@ export const initialPerson: Person = {
   phone: '(899) 456-3001',
 };
 
-function savePerson(person: Person | null): void {
-  console.log('saving', person);
-  // window.localStorage.setItem('person', JSON.stringify(person));
-  localforage.setItem('person', person);
-}
 const Playground = () => {
-  const [person, setPerson] = React.useState<Person | null>(null);
-
-  React.useEffect(() => {
-    (async function () {
-      const person = await localforage.getItem<Person>('person');
-      setPerson(person ?? initialPerson);
-    })();
-  }, []);
-  React.useEffect(() => {
-    savePerson(person);
-  }, [person]);
+  const [person] = usePerson(initialPerson);
 
   // side effect with cleanups
   React.useEffect(() => {
