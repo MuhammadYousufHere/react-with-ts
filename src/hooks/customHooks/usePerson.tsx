@@ -1,9 +1,10 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import localforage from 'localforage';
 import { useIsMounted } from './useIsMouted';
 import { Person } from '../../types';
 import { useDebounce } from './useDebounce';
 import { useWillUnmount } from './useWillUnmount';
+import { useThrottle } from './useThrottle';
 function savePerson(person: Person | null): void {
   console.log('saving', person);
   localforage.setItem('person', person);
@@ -19,6 +20,17 @@ export const usePerson = (initialPerson: Person) => {
       }
     })();
   }, [initialPerson, isMounted]);
+
+  // using useMemo
+
+  const fullName = useMemo(
+    () => ({
+      fistname: person?.firstname,
+      surname: person?.surname,
+    }),
+    [person?.firstname, person?.surname]
+  );
+  console.log(fullName);
   //
   // useEffect(() => {
   //   savePerson(person);
@@ -36,7 +48,12 @@ export const usePerson = (initialPerson: Person) => {
   }, [person]);
 
   // set only when a user stops changing the state/
-  useDebounce(() => {
+  // useDebounce(() => {
+  //   svPerson();
+  // }, 1000);
+
+  // set every  second/
+  useThrottle(() => {
     svPerson();
   }, 1000);
   useWillUnmount(svPerson);
