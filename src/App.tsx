@@ -1,13 +1,16 @@
-import { useContext } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { Products } from './features/products/Products';
-import { Cart } from './features/cart/Cart';
-import './App.css';
-import Form from './pages/Form/Form';
-import Navbar from './components/Navigation/Navbar';
-import Footer from './components/Footer/Footer';
-import Playground from './hooks';
-import ThemeContext from './hooks/Context';
+import { useContext } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { Products } from './features/products/Products'
+import { Cart } from './features/cart/Cart'
+import './App.css'
+import Form from './pages/Form/Form'
+import Navbar from './components/Navigation/Navbar'
+import Footer from './components/Footer/Footer'
+import Playground from './hooks'
+import ThemeContext from './hooks/Context'
+import { copyToClip } from './util/copyToClipboard'
+import ReactPerformance from './pages/ReactPerformance'
+import Intro from './pages/Intro'
 function AppRoutes() {
   return (
     <Routes>
@@ -33,20 +36,23 @@ function AppRoutes() {
         element={<Playground />}
       />
     </Routes>
-  );
+  )
 }
 function App() {
-  const { style } = useContext(ThemeContext);
-  const bg = style?.background === '#fff' ? '#fff' : '#0f172a';
+  const { style } = useContext(ThemeContext)
+  const bg = style?.background === '#fff' ? '#fff' : '#0f172a'
   return (
-    <div style={{ background: bg }}>
-      <Navbar />
-      <AppRoutes />
+    <div style={{ background: '' }}>
+      {/* <Navbar />
+      <Intro />
+      <AppRoutes /> */}
+
+      <ReactPerformance />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
 
 function Home() {
   return (
@@ -64,5 +70,5 @@ function Home() {
       </main>
       <Footer />
     </>
-  );
+  )
 }

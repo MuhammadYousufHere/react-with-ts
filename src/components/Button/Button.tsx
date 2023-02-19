@@ -1,14 +1,14 @@
 import React from 'react';
 
 interface Props {
-	title: string;
-	width: string;
-	color: string;
+	title?: string;
+	width?: string;
+	color?: string;
 	children?: React.ReactNode;
-	height: string;
-	radius: string;
-	type: string;
-	onClick: () => void;
+	height?: string;
+	radius?: string;
+	type?: string;
+	onClick?: () => void;
 }
 
 const Button: React.FC<Props> = ({
